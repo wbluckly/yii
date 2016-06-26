@@ -3,6 +3,8 @@
 namespace app\controllers;
 use yii\web\Controller;
 
+use yii\web\Cookie;
+
 class HelloController extends Controller
 {
 
@@ -73,5 +75,14 @@ class HelloController extends Controller
 
     public function actionCookie()
     {
+      $cookies = \YII::$app->response->cookies;
+
+      //$cookies_data = array('name'=>'user', 'value'=>'likdkdksi');// 如果要修改就直接改值就行了
+      //$cookies->add(new Cookie($cookies_data));
+      //$cookies->remove('user');// 删除
+
+      //获取session
+      //$cookies_res = \YII::$app->request->cookies;
+      //echo $cookies_res->getValue('user', 20);//20是默认值
     }
 }
