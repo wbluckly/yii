@@ -49,10 +49,29 @@ class HelloController extends Controller
       //下载
       //$res->headers->add('content-disposition', 'attachment; filename="a.jpg"'); 
       //$res->sendFile('./robots.txt');
+      //更多响应组件 http://www.yiichina.com/doc/guide/2.0/runtime-responses
     }
 
     public function actionSession()
     {
+      $session = \YII::$app->session;
       
+      $session->open();//开启session
+      //if($session->isActive) //验证session是否开启
+      //{
+        //echo 'session is active';
+      //} 
+      //$session->set('user', '张三');// 添加
+
+      //$session->remove('user');// 删除
+
+      // 以数组形式
+      //$session['user'] = '张三';// 添加
+      //unset($session['user']); 
+      //echo $session->get('user');
+    }
+
+    public function actionCookie()
+    {
     }
 }
